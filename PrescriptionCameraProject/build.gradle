@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 16
+    }
+}
+
+task copyNativeLibs(type: Copy) {
+    from(new File('libs')) { include '**' }
+    into new File(buildDir, 'app-lib')
+}
+tasks.withType(Compile) { compileTask -> compileTask.dependsOn copyNativeLibs }
+
+clean.dependsOn 'cleanCopyNativeLibs'
+
+tasks.withType(com.android.build.gradle.tasks.PackageApplication) { pkgTask ->
+    pkgTask.jniDir new File(buildDir, 'app-lib')
+}
+
+
+dependencies {
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/dropbox-sync-sdk-android.jar')
+	compile 'com.android.support:appcompat-v7:+'
+}

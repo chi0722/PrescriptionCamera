@@ -1,0 +1,70 @@
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+            android:layout_width="280dp"
+            android:layout_height="180dp"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="false"
+            android:layout_centerInParent="true">
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="處方"
+                android:id="@+id/radioButton1"
+                android:checked="true"
+                android:layout_gravity="left|center_vertical"/>
+
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/patientUidEditText"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentBottom="false"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_centerInParent="true"
+                android:layout_gravity="left|top"
+                android:textIsSelectable="false"
+                android:hint="身分證字號"/>
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="檢驗報告"
+                android:id="@+id/radioButton2"
+                android:checked="false"
+                android:layout_gravity="center"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="確定"
+                android:id="@+id/showCameraButton"
+                android:layout_gravity="right|center_vertical"
+                android:enabled="false"/>
+
+    </FrameLayout>
+
+    <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/dropboxImageView"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/dropbox"/>
+
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="64dp"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/misc"
+            android:layout_marginTop="50dp"/>
+
+</RelativeLayout><!-- From: file:/Users/Rich/Dropbox/MyProject/Software/Project/AndroidStudioProjects/PrescriptionCameraProjectProject/PrescriptionCameraProject/src/main/res/layout/activity_main.xml -->
