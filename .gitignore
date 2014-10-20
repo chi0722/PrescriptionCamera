@@ -4,4 +4,5 @@
 .DS_Store
 build/
 *.iml
-*.apk
+PrescriptionCamera/*.apk
+PrescriptionCamera/*.iml
